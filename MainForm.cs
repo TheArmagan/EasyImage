@@ -83,6 +83,8 @@ namespace EasyImage
 
             imageInfoInput.Text = $"{mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(fileInfo.Length / 1024))}kb | {Path.GetFileName(currentImagePath)}";
 
+            fileInfo = null;
+
         }
 
 
