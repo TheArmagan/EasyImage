@@ -11,7 +11,7 @@ namespace EasyImage
     {
 
         private PictureBoxSizeMode currentImageSizeMode = PictureBoxSizeMode.Zoom;
-        private string currentImagePath = "";
+        private FileInfo currentFileInfo;
 
         public MainForm(string[] args)
         {
@@ -24,7 +24,7 @@ namespace EasyImage
 
             if (args.Length == 1)
             {
-                mainPictureBox.ImageLocation = currentImagePath = args[0];
+                loadFile(args[0]);
             }
    
         }
@@ -56,6 +56,19 @@ namespace EasyImage
             }
         }
 
+        private void loadFile(string imagePath)
+        {
+            if (mainPictureBox.Image != null)
+            {
+                mainPictureBox.Image.Dispose();
+                mainPictureBox.Image = null;
+            }
+
+            mainPictureBox.ImageLocation = imagePath;
+
+            currentFileInfo = new FileInfo(imagePath);
+        }
+
         private void openFileButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -65,13 +78,7 @@ namespace EasyImage
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
 
-                    if (mainPictureBox.Image != null)
-                    {
-                        mainPictureBox.Image.Dispose();
-                        mainPictureBox.Image = null;
-                    }
-
-                    mainPictureBox.ImageLocation = currentImagePath = openFileDialog.FileName;
+                    loadFile(openFileDialog.FileName);
                 }
             }
 
@@ -79,11 +86,8 @@ namespace EasyImage
 
         private void MainPictureBox_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            FileInfo fileInfo = new FileInfo(currentImagePath);
-
-            imageInfoInput.Text = $"{mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(fileInfo.Length / 1024))}kb | {Path.GetFileName(currentImagePath)}";
-
-            fileInfo = null;
+            
+            imageInfoInput.Text = $"{mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(currentFileInfo.Length / 1024))}kb | {currentFileInfo.Name}";
 
         }
 
