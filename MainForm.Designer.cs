@@ -35,9 +35,12 @@
             this.changeImageSizeModeButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.mainPictureBox = new System.Windows.Forms.PictureBox();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.topImageInfoPanel = new System.Windows.Forms.Panel();
+            this.imageInfoInput = new System.Windows.Forms.TextBox();
+            this.mainPictureBox = new System.Windows.Forms.PictureBox();
             this.topControlPanel.SuspendLayout();
+            this.topImageInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +54,7 @@
             this.topControlPanel.Controls.Add(this.exitButton);
             this.topControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topControlPanel.Location = new System.Drawing.Point(0, 0);
-            this.topControlPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.topControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.topControlPanel.Name = "topControlPanel";
             this.topControlPanel.Size = new System.Drawing.Size(683, 37);
             this.topControlPanel.TabIndex = 0;
@@ -67,7 +70,7 @@
             this.topMostButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.topMostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.topMostButton.Location = new System.Drawing.Point(431, 0);
-            this.topMostButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.topMostButton.Margin = new System.Windows.Forms.Padding(4);
             this.topMostButton.Name = "topMostButton";
             this.topMostButton.Size = new System.Drawing.Size(85, 37);
             this.topMostButton.TabIndex = 4;
@@ -99,7 +102,7 @@
             this.changeImageSizeModeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.changeImageSizeModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changeImageSizeModeButton.Location = new System.Drawing.Point(516, 0);
-            this.changeImageSizeModeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.changeImageSizeModeButton.Margin = new System.Windows.Forms.Padding(4);
             this.changeImageSizeModeButton.Name = "changeImageSizeModeButton";
             this.changeImageSizeModeButton.Size = new System.Drawing.Size(107, 37);
             this.changeImageSizeModeButton.TabIndex = 2;
@@ -131,27 +134,13 @@
             this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Location = new System.Drawing.Point(623, 0);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(60, 37);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "X";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // mainPictureBox
-            // 
-            this.mainPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(96)))), ((int)(((byte)(111)))));
-            this.mainPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.mainPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.mainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPictureBox.Location = new System.Drawing.Point(0, 37);
-            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mainPictureBox.Name = "mainPictureBox";
-            this.mainPictureBox.Size = new System.Drawing.Size(683, 618);
-            this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.mainPictureBox.TabIndex = 1;
-            this.mainPictureBox.TabStop = false;
             // 
             // elementHost1
             // 
@@ -162,6 +151,49 @@
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = null;
             // 
+            // topImageInfoPanel
+            // 
+            this.topImageInfoPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.topImageInfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.topImageInfoPanel.Controls.Add(this.imageInfoInput);
+            this.topImageInfoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topImageInfoPanel.Location = new System.Drawing.Point(0, 37);
+            this.topImageInfoPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.topImageInfoPanel.Name = "topImageInfoPanel";
+            this.topImageInfoPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.topImageInfoPanel.Size = new System.Drawing.Size(683, 23);
+            this.topImageInfoPanel.TabIndex = 0;
+            // 
+            // imageInfoInput
+            // 
+            this.imageInfoInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.imageInfoInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.imageInfoInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imageInfoInput.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold);
+            this.imageInfoInput.ForeColor = System.Drawing.Color.White;
+            this.imageInfoInput.Location = new System.Drawing.Point(3, 3);
+            this.imageInfoInput.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.imageInfoInput.Name = "imageInfoInput";
+            this.imageInfoInput.ReadOnly = true;
+            this.imageInfoInput.Size = new System.Drawing.Size(677, 15);
+            this.imageInfoInput.TabIndex = 0;
+            this.imageInfoInput.Text = "Please select an image.";
+            this.imageInfoInput.WordWrap = false;
+            // 
+            // mainPictureBox
+            // 
+            this.mainPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(96)))), ((int)(((byte)(111)))));
+            this.mainPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mainPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPictureBox.Location = new System.Drawing.Point(0, 60);
+            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.mainPictureBox.Name = "mainPictureBox";
+            this.mainPictureBox.Size = new System.Drawing.Size(683, 595);
+            this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.mainPictureBox.TabIndex = 3;
+            this.mainPictureBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -170,19 +202,22 @@
             this.BackColor = System.Drawing.Color.Lime;
             this.ClientSize = new System.Drawing.Size(683, 655);
             this.ControlBox = false;
-            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.mainPictureBox);
+            this.Controls.Add(this.topImageInfoPanel);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.topControlPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(250, 150);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Lime;
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.topControlPanel.ResumeLayout(false);
+            this.topImageInfoPanel.ResumeLayout(false);
+            this.topImageInfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -195,9 +230,11 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button openFileButton;
-        private System.Windows.Forms.PictureBox mainPictureBox;
         private System.Windows.Forms.Button topMostButton;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private System.Windows.Forms.Panel topImageInfoPanel;
+        private System.Windows.Forms.TextBox imageInfoInput;
+        private System.Windows.Forms.PictureBox mainPictureBox;
     }
 }
 

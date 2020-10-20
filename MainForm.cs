@@ -11,6 +11,7 @@ namespace EasyImage
     {
 
         private PictureBoxSizeMode currentImageSizeMode = PictureBoxSizeMode.Zoom;
+        private string currentImagePath = "";
 
         public MainForm(string[] args)
         {
@@ -19,10 +20,13 @@ namespace EasyImage
             changeImageSizeModeButton.Text = Enum.GetName(typeof(PictureBoxSizeMode), currentImageSizeMode);
             mainPictureBox.SizeMode = currentImageSizeMode;
 
+            mainPictureBox.LoadCompleted += MainPictureBox_LoadCompleted;
+
             if (args.Length == 1)
             {
-                mainPictureBox.ImageLocation = args[0];
+                mainPictureBox.ImageLocation = currentImagePath = args[0];
             }
+   
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -67,11 +71,20 @@ namespace EasyImage
                         mainPictureBox.Image = null;
                     }
 
-                    mainPictureBox.ImageLocation = openFileDialog.FileName;
+                    mainPictureBox.ImageLocation = currentImagePath = openFileDialog.FileName;
                 }
             }
 
         }
+
+        private void MainPictureBox_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            FileInfo fileInfo = new FileInfo(currentImagePath);
+
+            imageInfoInput.Text = $"{mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(fileInfo.Length / 1024))}kb | {Path.GetFileName(currentImagePath)}";
+
+        }
+
 
         private void changeImageSizeModeButton_Click(object sender, EventArgs e)
         {
@@ -115,5 +128,6 @@ namespace EasyImage
                 changeImageSizeModeButton.Visible = true;
             }
         }
+
     }
 }
