@@ -61,6 +61,12 @@ namespace EasyImage
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
 
+                    if (mainPictureBox.Image != null)
+                    {
+                        mainPictureBox.Image.Dispose();
+                        mainPictureBox.Image = null;
+                    }
+
                     mainPictureBox.ImageLocation = openFileDialog.FileName;
                 }
             }
