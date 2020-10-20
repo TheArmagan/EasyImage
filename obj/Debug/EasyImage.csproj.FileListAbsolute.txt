@@ -1,0 +1,11 @@
+C:\Users\BDT\source\repos\EasyImage\bin\Debug\EasyImage.exe.config
+C:\Users\BDT\source\repos\EasyImage\bin\Debug\EasyImage.exe
+C:\Users\BDT\source\repos\EasyImage\bin\Debug\EasyImage.pdb
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.csprojAssemblyReference.cache
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.MainForm.resources
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.Properties.Resources.resources
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.csproj.GenerateResource.cache
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.exe
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.pdb
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.AboutForm.resources
+C:\Users\BDT\source\repos\EasyImage\obj\Debug\EasyImage.csproj.CoreCompileInputs.cache
