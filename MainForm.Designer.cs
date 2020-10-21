@@ -38,9 +38,13 @@
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.topImageInfoPanel = new System.Windows.Forms.Panel();
             this.imageInfoInput = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.oneImageForwardsButton = new System.Windows.Forms.Button();
+            this.oneImageBackwardsButton = new System.Windows.Forms.Button();
             this.mainPictureBox = new System.Windows.Forms.PictureBox();
             this.topControlPanel.SuspendLayout();
             this.topImageInfoPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,6 +184,47 @@
             this.imageInfoInput.Text = "Please select an image.";
             this.imageInfoInput.WordWrap = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.oneImageForwardsButton);
+            this.panel1.Controls.Add(this.oneImageBackwardsButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 651);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(683, 36);
+            this.panel1.TabIndex = 3;
+            // 
+            // oneImageForwardsButton
+            // 
+            this.oneImageForwardsButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.oneImageForwardsButton.FlatAppearance.BorderSize = 0;
+            this.oneImageForwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.oneImageForwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.oneImageForwardsButton.ForeColor = System.Drawing.Color.White;
+            this.oneImageForwardsButton.Location = new System.Drawing.Point(647, 0);
+            this.oneImageForwardsButton.Name = "oneImageForwardsButton";
+            this.oneImageForwardsButton.Size = new System.Drawing.Size(36, 36);
+            this.oneImageForwardsButton.TabIndex = 1;
+            this.oneImageForwardsButton.Text = ">";
+            this.oneImageForwardsButton.UseVisualStyleBackColor = true;
+            this.oneImageForwardsButton.Click += new System.EventHandler(this.oneImageForwardButton_Click);
+            // 
+            // oneImageBackwardsButton
+            // 
+            this.oneImageBackwardsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.oneImageBackwardsButton.FlatAppearance.BorderSize = 0;
+            this.oneImageBackwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.oneImageBackwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.oneImageBackwardsButton.ForeColor = System.Drawing.Color.White;
+            this.oneImageBackwardsButton.Location = new System.Drawing.Point(0, 0);
+            this.oneImageBackwardsButton.Name = "oneImageBackwardsButton";
+            this.oneImageBackwardsButton.Size = new System.Drawing.Size(36, 36);
+            this.oneImageBackwardsButton.TabIndex = 0;
+            this.oneImageBackwardsButton.Text = "<";
+            this.oneImageBackwardsButton.UseVisualStyleBackColor = true;
+            this.oneImageBackwardsButton.Click += new System.EventHandler(this.oneImageBackwardsButton_Click);
+            // 
             // mainPictureBox
             // 
             this.mainPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(96)))), ((int)(((byte)(111)))));
@@ -189,9 +234,9 @@
             this.mainPictureBox.Location = new System.Drawing.Point(0, 60);
             this.mainPictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.mainPictureBox.Name = "mainPictureBox";
-            this.mainPictureBox.Size = new System.Drawing.Size(683, 595);
+            this.mainPictureBox.Size = new System.Drawing.Size(683, 591);
             this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.mainPictureBox.TabIndex = 3;
+            this.mainPictureBox.TabIndex = 4;
             this.mainPictureBox.TabStop = false;
             // 
             // MainForm
@@ -200,9 +245,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lime;
-            this.ClientSize = new System.Drawing.Size(683, 655);
+            this.ClientSize = new System.Drawing.Size(683, 687);
             this.ControlBox = false;
             this.Controls.Add(this.mainPictureBox);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.topImageInfoPanel);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.topControlPanel);
@@ -218,6 +264,7 @@
             this.topControlPanel.ResumeLayout(false);
             this.topImageInfoPanel.ResumeLayout(false);
             this.topImageInfoPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -234,7 +281,10 @@
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private System.Windows.Forms.Panel topImageInfoPanel;
         private System.Windows.Forms.TextBox imageInfoInput;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox mainPictureBox;
+        private System.Windows.Forms.Button oneImageForwardsButton;
+        private System.Windows.Forms.Button oneImageBackwardsButton;
     }
 }
 

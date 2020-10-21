@@ -12,6 +12,8 @@ namespace EasyImage
 
         private PictureBoxSizeMode currentImageSizeMode = PictureBoxSizeMode.Zoom;
         private FileInfo currentFileInfo;
+        private string[] supportedExtensions = new string[] { ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".ico", ".jfif" };
+
 
         public MainForm(string[] args)
         {
@@ -86,9 +88,13 @@ namespace EasyImage
 
         private void MainPictureBox_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            
-            imageInfoInput.Text = $"{mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(currentFileInfo.Length / 1024))}kb | {currentFileInfo.Name}";
+            FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v) => { return Array.Exists(supportedExtensions, (extension) => { return extension == v.Extension; }); }); ;
+            int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
 
+            imageInfoInput.Text = $"{currentIndex+1}/{fileInfos.Length} | {mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(currentFileInfo.Length / 1024))}kb | {currentFileInfo.Name}";
+
+            oneImageBackwardsButton.Enabled = true;
+            oneImageForwardsButton.Enabled = true;
         }
 
 
@@ -132,6 +138,49 @@ namespace EasyImage
             } else
             {
                 changeImageSizeModeButton.Visible = true;
+            }
+        }
+
+        private void oneImageBackwardsButton_Click(object sender, EventArgs e)
+        {
+            oneImageBackwardsButton.Enabled = false;
+            oneImageBackwards();
+        }
+
+        private void oneImageForwardButton_Click(object sender, EventArgs e)
+        {
+            oneImageForwardsButton.Enabled = false;
+            oneImageForward();
+        }
+
+        private void oneImageBackwards()
+        {
+            FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v) => { return Array.Exists(supportedExtensions, (extension) => { return extension == v.Extension; }); }); ;
+            int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
+
+            if (currentIndex - 1 < 0)
+            {
+                MessageBox.Show("No more image");
+            }
+            else
+            {
+                loadFile(fileInfos[currentIndex - 1].FullName);
+            }
+        }
+
+        private void oneImageForward()
+        {
+
+            FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v)=> { return Array.Exists(supportedExtensions, (extension)=> { return extension == v.Extension; }); });
+            int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
+
+            if (currentIndex + 1 > fileInfos.Length - 1)
+            {
+                MessageBox.Show("No More Image");
+            }
+            else
+            {
+                loadFile(fileInfos[currentIndex + 1].FullName);
             }
         }
 
