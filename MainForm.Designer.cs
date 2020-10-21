@@ -194,6 +194,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 36);
             this.panel1.TabIndex = 3;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this._move_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this._move_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this._move_MouseUp);
             // 
             // oneImageForwardsButton
             // 

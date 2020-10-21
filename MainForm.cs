@@ -24,11 +24,39 @@ namespace EasyImage
 
             mainPictureBox.LoadCompleted += MainPictureBox_LoadCompleted;
 
+            oneImageBackwardsButton.Enabled = false;
+            oneImageForwardsButton.Enabled = false;
+
+            mainPictureBox.ContextMenu = new ContextMenu();
+
+            MenuItem copyImageToClipboardMenuItem = mainPictureBox.ContextMenu.MenuItems.Add("Copy Image");
+            MenuItem copyImagePathToClipboardMenuItem = mainPictureBox.ContextMenu.MenuItems.Add("Copy Path");
+
+            copyImageToClipboardMenuItem.Click += CopyImageToClipboardMenuItem_Click;
+            copyImagePathToClipboardMenuItem.Click += CopyImagePathToClipboardMenuItem_Click;
+
             if (args.Length == 1)
             {
                 loadFile(args[0]);
             }
    
+        }
+
+        private void CopyImagePathToClipboardMenuItem_Click(object sender, EventArgs e)
+        {
+            if (currentFileInfo != null)
+            {
+                Clipboard.SetText(currentFileInfo.FullName);
+            }
+        }
+
+        private void CopyImageToClipboardMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mainPictureBox.Image != null)
+            {
+                Clipboard.SetImage(mainPictureBox.Image);
+            }
+            
         }
 
         private void exitButton_Click(object sender, EventArgs e)
