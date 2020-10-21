@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace EasyImage
@@ -13,6 +15,7 @@ namespace EasyImage
         private PictureBoxSizeMode currentImageSizeMode = PictureBoxSizeMode.Zoom;
         private FileInfo currentFileInfo;
         private string[] supportedExtensions = new string[] { ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".ico", ".jfif" };
+        private Point _minMax_lastLocation;
 
 
         public MainForm(string[] args)
@@ -22,6 +25,7 @@ namespace EasyImage
             changeImageSizeModeButton.Text = Enum.GetName(typeof(PictureBoxSizeMode), currentImageSizeMode);
             mainPictureBox.SizeMode = currentImageSizeMode;
 
+            mainPictureBox.LoadProgressChanged += MainPictureBox_LoadProgressChanged;
             mainPictureBox.LoadCompleted += MainPictureBox_LoadCompleted;
 
             oneImageBackwardsButton.Enabled = false;
@@ -35,11 +39,20 @@ namespace EasyImage
             copyImageToClipboardMenuItem.Click += CopyImageToClipboardMenuItem_Click;
             copyImagePathToClipboardMenuItem.Click += CopyImagePathToClipboardMenuItem_Click;
 
+            imageLoadProgressBar.Visible = false;
+
             if (args.Length == 1)
             {
                 loadFile(args[0]);
             }
-   
+
+            GC.Collect();
+
+        }
+
+        private void MainPictureBox_LoadProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+            imageLoadProgressBar.Value = e.ProgressPercentage;
         }
 
         private void CopyImagePathToClipboardMenuItem_Click(object sender, EventArgs e)
@@ -88,15 +101,23 @@ namespace EasyImage
 
         private void loadFile(string imagePath)
         {
+            imageLoadProgressBar.Value = 0;
+            imageLoadProgressBar.Visible = true;
+
+            currentFileInfo = null;
+
             if (mainPictureBox.Image != null)
             {
                 mainPictureBox.Image.Dispose();
                 mainPictureBox.Image = null;
+                mainPictureBox.ImageLocation = null;
             }
 
-            mainPictureBox.ImageLocation = imagePath;
-
             currentFileInfo = new FileInfo(imagePath);
+
+            GC.Collect();
+
+            mainPictureBox.ImageLocation = imagePath;
         }
 
         private void openFileButton_Click(object sender, EventArgs e)
@@ -107,7 +128,7 @@ namespace EasyImage
                 openFileDialog.Filter = "Image Files|*.png;*.jpg;*.jpeg;*.gif;*.bmp;*.ico;*.jfif";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
-
+                    GC.Collect();
                     loadFile(openFileDialog.FileName);
                 }
             }
@@ -116,6 +137,9 @@ namespace EasyImage
 
         private void MainPictureBox_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
+
+            imageLoadProgressBar.Visible = false;
+
             FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v) => { return Array.Exists(supportedExtensions, (extension) => { return extension == v.Extension; }); }); ;
             int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
 
@@ -152,7 +176,7 @@ namespace EasyImage
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
 
-            if (this.Size.Width < 450)
+            if (this.Size.Width < 500)
             {
                 topMostButton.Visible = false;
             } else
@@ -160,7 +184,7 @@ namespace EasyImage
                 topMostButton.Visible = true;
             }
 
-            if (this.Size.Width < 330)
+            if (this.Size.Width < 410)
             {
                 changeImageSizeModeButton.Visible = false;
             } else
@@ -209,6 +233,34 @@ namespace EasyImage
             else
             {
                 loadFile(fileInfos[currentIndex + 1].FullName);
+            }
+        }
+
+        private void maxMinWindowButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            Screen currentScreen = Screen.FromControl(this);
+
+            int maxW = currentScreen.WorkingArea.Width;
+            int maxH = currentScreen.WorkingArea.Height;
+
+            if (this.Width >= maxW || this.Height >= maxH)
+            {
+                this.Width = 700;
+                this.Height = 700;
+
+                if (_minMax_lastLocation != null)
+                {
+                    this.Location = _minMax_lastLocation;
+                }
+
+            }
+            else
+            {
+                _minMax_lastLocation = this.Location;
+                this.Location = new Point(0, 0);
+
+                this.Width = maxW;
+                this.Height = maxH;
             }
         }
 

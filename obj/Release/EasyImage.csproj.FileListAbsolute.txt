@@ -9,3 +9,5 @@ C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.exe
 C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.pdb
 C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csprojAssemblyReference.cache
 C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csproj.CoreCompileInputs.cache
+C:\Users\BDT\source\repos\EasyImage\bin\Release\System.Drawing.Common.dll
+C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csproj.CopyComplete
