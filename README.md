@@ -1,6 +1,16 @@
 > # ✨ EasyImage
 > An easy to use image viewing tool.
 
+<a href="https://github.com/HerryYT/JSPrismarine/blob/master/LICENSE">
+<img alt="License" src="https://img.shields.io/github/license/TheArmagan/EasyImage?style=for-the-badge">
+</a>
+<a href="https://github.com/HerryYT/JSPrismarine/graphs/contributors">
+<img alt="Contributors" src="https://img.shields.io/github/contributors/TheArmagan/EasyImage?color=%23E30B5D&style=for-the-badge">
+</a>
+<a href="https://github.com/TheArmagan/EasyImage/commits/master">
+<img alt="GitHub Commit Activity" src="https://img.shields.io/github/commit-activity/m/JSPrismarine/JSPrismarine?color=%2387F4BC&style=for-the-badge">
+</a>
+
 ---
 
 > #### Features
