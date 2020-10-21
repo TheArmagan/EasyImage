@@ -21,6 +21,8 @@
  * Easy to topmost
  * Easy to see image info.
 
+
+[![Download](https://da-box.herokuapp.com/&1603291592580-7ju_mdbFatB5FzcJ-dlbtn.png)](https://github.com/TheArmagan/EasyImage/releases/latest)
 ---
 
 > ### Previews
