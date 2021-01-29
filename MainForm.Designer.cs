@@ -40,10 +40,10 @@
             this.topImageInfoPanel = new System.Windows.Forms.Panel();
             this.imageInfoInput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.imageLoadProgressBar = new System.Windows.Forms.ProgressBar();
             this.oneImageForwardsButton = new System.Windows.Forms.Button();
             this.oneImageBackwardsButton = new System.Windows.Forms.Button();
             this.mainPictureBox = new System.Windows.Forms.PictureBox();
-            this.imageLoadProgressBar = new System.Windows.Forms.ProgressBar();
             this.topControlPanel.SuspendLayout();
             this.topImageInfoPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,9 +61,8 @@
             this.topControlPanel.Controls.Add(this.exitButton);
             this.topControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topControlPanel.Location = new System.Drawing.Point(0, 0);
-            this.topControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.topControlPanel.Name = "topControlPanel";
-            this.topControlPanel.Size = new System.Drawing.Size(682, 37);
+            this.topControlPanel.Size = new System.Drawing.Size(512, 30);
             this.topControlPanel.TabIndex = 0;
             this.topControlPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this._move_MouseDown);
             this.topControlPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this._move_MouseMove);
@@ -76,10 +75,9 @@
             this.topMostButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
             this.topMostButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.topMostButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.topMostButton.Location = new System.Drawing.Point(370, 0);
-            this.topMostButton.Margin = new System.Windows.Forms.Padding(4);
+            this.topMostButton.Location = new System.Drawing.Point(278, 0);
             this.topMostButton.Name = "topMostButton";
-            this.topMostButton.Size = new System.Drawing.Size(85, 37);
+            this.topMostButton.Size = new System.Drawing.Size(64, 30);
             this.topMostButton.TabIndex = 7;
             this.topMostButton.Text = "TopMost";
             this.topMostButton.UseVisualStyleBackColor = true;
@@ -92,10 +90,9 @@
             this.changeImageSizeModeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
             this.changeImageSizeModeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.changeImageSizeModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeImageSizeModeButton.Location = new System.Drawing.Point(455, 0);
-            this.changeImageSizeModeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.changeImageSizeModeButton.Location = new System.Drawing.Point(342, 0);
             this.changeImageSizeModeButton.Name = "changeImageSizeModeButton";
-            this.changeImageSizeModeButton.Size = new System.Drawing.Size(107, 37);
+            this.changeImageSizeModeButton.Size = new System.Drawing.Size(80, 30);
             this.changeImageSizeModeButton.TabIndex = 6;
             this.changeImageSizeModeButton.Text = "Mode";
             this.changeImageSizeModeButton.UseVisualStyleBackColor = true;
@@ -109,11 +106,10 @@
             this.maxMinWindowButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.maxMinWindowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maxMinWindowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.maxMinWindowButton.Location = new System.Drawing.Point(562, 0);
-            this.maxMinWindowButton.Margin = new System.Windows.Forms.Padding(4);
+            this.maxMinWindowButton.Location = new System.Drawing.Point(422, 0);
             this.maxMinWindowButton.Name = "maxMinWindowButton";
-            this.maxMinWindowButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.maxMinWindowButton.Size = new System.Drawing.Size(60, 37);
+            this.maxMinWindowButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.maxMinWindowButton.Size = new System.Drawing.Size(45, 30);
             this.maxMinWindowButton.TabIndex = 5;
             this.maxMinWindowButton.Text = "[ ]";
             this.maxMinWindowButton.UseVisualStyleBackColor = true;
@@ -126,10 +122,10 @@
             this.openFileButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(31)))), ((int)(((byte)(39)))));
             this.openFileButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.openFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openFileButton.Location = new System.Drawing.Point(113, 0);
+            this.openFileButton.Location = new System.Drawing.Point(85, 0);
             this.openFileButton.Margin = new System.Windows.Forms.Padding(0);
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(64, 37);
+            this.openFileButton.Size = new System.Drawing.Size(48, 30);
             this.openFileButton.TabIndex = 3;
             this.openFileButton.Text = "Open";
             this.openFileButton.UseVisualStyleBackColor = true;
@@ -140,9 +136,8 @@
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(113, 37);
+            this.titleLabel.Size = new System.Drawing.Size(85, 30);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Easy Image";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,10 +154,9 @@
             this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(52)))));
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.exitButton.Location = new System.Drawing.Point(622, 0);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.exitButton.Location = new System.Drawing.Point(467, 0);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(60, 37);
+            this.exitButton.Size = new System.Drawing.Size(45, 30);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "X";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -170,9 +164,10 @@
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(2214, 1284);
+            this.elementHost1.Location = new System.Drawing.Point(1660, 1043);
+            this.elementHost1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(10, 10);
+            this.elementHost1.Size = new System.Drawing.Size(8, 8);
             this.elementHost1.TabIndex = 2;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = null;
@@ -183,11 +178,11 @@
             this.topImageInfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.topImageInfoPanel.Controls.Add(this.imageInfoInput);
             this.topImageInfoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topImageInfoPanel.Location = new System.Drawing.Point(0, 37);
+            this.topImageInfoPanel.Location = new System.Drawing.Point(0, 30);
             this.topImageInfoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.topImageInfoPanel.Name = "topImageInfoPanel";
-            this.topImageInfoPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.topImageInfoPanel.Size = new System.Drawing.Size(682, 23);
+            this.topImageInfoPanel.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topImageInfoPanel.Size = new System.Drawing.Size(512, 19);
             this.topImageInfoPanel.TabIndex = 0;
             // 
             // imageInfoInput
@@ -197,11 +192,11 @@
             this.imageInfoInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageInfoInput.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold);
             this.imageInfoInput.ForeColor = System.Drawing.Color.White;
-            this.imageInfoInput.Location = new System.Drawing.Point(3, 3);
-            this.imageInfoInput.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.imageInfoInput.Location = new System.Drawing.Point(2, 2);
+            this.imageInfoInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.imageInfoInput.Name = "imageInfoInput";
             this.imageInfoInput.ReadOnly = true;
-            this.imageInfoInput.Size = new System.Drawing.Size(676, 15);
+            this.imageInfoInput.Size = new System.Drawing.Size(508, 12);
             this.imageInfoInput.TabIndex = 0;
             this.imageInfoInput.Text = "Please select an image.";
             this.imageInfoInput.WordWrap = false;
@@ -213,13 +208,23 @@
             this.panel1.Controls.Add(this.oneImageForwardsButton);
             this.panel1.Controls.Add(this.oneImageBackwardsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 646);
+            this.panel1.Location = new System.Drawing.Point(0, 525);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(682, 36);
+            this.panel1.Size = new System.Drawing.Size(512, 29);
             this.panel1.TabIndex = 3;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this._move_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this._move_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this._move_MouseUp);
+            // 
+            // imageLoadProgressBar
+            // 
+            this.imageLoadProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imageLoadProgressBar.Location = new System.Drawing.Point(27, 0);
+            this.imageLoadProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imageLoadProgressBar.Name = "imageLoadProgressBar";
+            this.imageLoadProgressBar.Size = new System.Drawing.Size(458, 29);
+            this.imageLoadProgressBar.TabIndex = 2;
             // 
             // oneImageForwardsButton
             // 
@@ -228,9 +233,10 @@
             this.oneImageForwardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.oneImageForwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.oneImageForwardsButton.ForeColor = System.Drawing.Color.White;
-            this.oneImageForwardsButton.Location = new System.Drawing.Point(646, 0);
+            this.oneImageForwardsButton.Location = new System.Drawing.Point(485, 0);
+            this.oneImageForwardsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oneImageForwardsButton.Name = "oneImageForwardsButton";
-            this.oneImageForwardsButton.Size = new System.Drawing.Size(36, 36);
+            this.oneImageForwardsButton.Size = new System.Drawing.Size(27, 29);
             this.oneImageForwardsButton.TabIndex = 1;
             this.oneImageForwardsButton.Text = ">";
             this.oneImageForwardsButton.UseVisualStyleBackColor = true;
@@ -244,8 +250,9 @@
             this.oneImageBackwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.oneImageBackwardsButton.ForeColor = System.Drawing.Color.White;
             this.oneImageBackwardsButton.Location = new System.Drawing.Point(0, 0);
+            this.oneImageBackwardsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.oneImageBackwardsButton.Name = "oneImageBackwardsButton";
-            this.oneImageBackwardsButton.Size = new System.Drawing.Size(36, 36);
+            this.oneImageBackwardsButton.Size = new System.Drawing.Size(27, 29);
             this.oneImageBackwardsButton.TabIndex = 0;
             this.oneImageBackwardsButton.Text = "<";
             this.oneImageBackwardsButton.UseVisualStyleBackColor = true;
@@ -257,29 +264,21 @@
             this.mainPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mainPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.mainPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPictureBox.Location = new System.Drawing.Point(0, 60);
+            this.mainPictureBox.Location = new System.Drawing.Point(0, 49);
             this.mainPictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.mainPictureBox.Name = "mainPictureBox";
-            this.mainPictureBox.Size = new System.Drawing.Size(682, 586);
+            this.mainPictureBox.Size = new System.Drawing.Size(512, 476);
             this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mainPictureBox.TabIndex = 4;
             this.mainPictureBox.TabStop = false;
             // 
-            // imageLoadProgressBar
-            // 
-            this.imageLoadProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imageLoadProgressBar.Location = new System.Drawing.Point(36, 0);
-            this.imageLoadProgressBar.Name = "imageLoadProgressBar";
-            this.imageLoadProgressBar.Size = new System.Drawing.Size(610, 36);
-            this.imageLoadProgressBar.TabIndex = 2;
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lime;
-            this.ClientSize = new System.Drawing.Size(682, 682);
+            this.ClientSize = new System.Drawing.Size(512, 554);
             this.ControlBox = false;
             this.Controls.Add(this.mainPictureBox);
             this.Controls.Add(this.panel1);
@@ -289,8 +288,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(250, 150);
+            this.MinimumSize = new System.Drawing.Size(192, 125);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Lime;

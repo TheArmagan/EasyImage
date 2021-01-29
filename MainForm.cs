@@ -15,7 +15,6 @@ namespace EasyImage
         private PictureBoxSizeMode currentImageSizeMode = PictureBoxSizeMode.Zoom;
         private FileInfo currentFileInfo;
         private string[] supportedExtensions = new string[] { ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".ico", ".jfif" };
-        private Point _minMax_lastLocation;
 
 
         public MainForm(string[] args)
@@ -238,29 +237,16 @@ namespace EasyImage
 
         private void maxMinWindowButton_MouseClick(object sender, MouseEventArgs e)
         {
-            Screen currentScreen = Screen.FromControl(this);
 
-            int maxW = currentScreen.WorkingArea.Width;
-            int maxH = currentScreen.WorkingArea.Height;
-
-            if (this.Width >= maxW || this.Height >= maxH)
+            if (FormBorderStyle == FormBorderStyle.None)
             {
-                this.Width = 700;
-                this.Height = 700;
-
-                if (_minMax_lastLocation != null)
-                {
-                    this.Location = _minMax_lastLocation;
-                }
-
+                FormBorderStyle = FormBorderStyle.SizableToolWindow;
+                WindowState = FormWindowState.Normal;
             }
             else
             {
-                _minMax_lastLocation = this.Location;
-                this.Location = new Point(0, 0);
-
-                this.Width = maxW;
-                this.Height = maxH;
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
             }
         }
 
