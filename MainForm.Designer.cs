@@ -165,7 +165,7 @@
             // elementHost1
             // 
             this.elementHost1.Location = new System.Drawing.Point(1660, 1043);
-            this.elementHost1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.elementHost1.Margin = new System.Windows.Forms.Padding(2);
             this.elementHost1.Name = "elementHost1";
             this.elementHost1.Size = new System.Drawing.Size(8, 8);
             this.elementHost1.TabIndex = 2;
@@ -181,7 +181,7 @@
             this.topImageInfoPanel.Location = new System.Drawing.Point(0, 30);
             this.topImageInfoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.topImageInfoPanel.Name = "topImageInfoPanel";
-            this.topImageInfoPanel.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.topImageInfoPanel.Padding = new System.Windows.Forms.Padding(2);
             this.topImageInfoPanel.Size = new System.Drawing.Size(512, 19);
             this.topImageInfoPanel.TabIndex = 0;
             // 
@@ -190,6 +190,7 @@
             this.imageInfoInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(46)))));
             this.imageInfoInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.imageInfoInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imageInfoInput.Enabled = false;
             this.imageInfoInput.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold);
             this.imageInfoInput.ForeColor = System.Drawing.Color.White;
             this.imageInfoInput.Location = new System.Drawing.Point(2, 2);
@@ -209,7 +210,7 @@
             this.panel1.Controls.Add(this.oneImageBackwardsButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 525);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 29);
             this.panel1.TabIndex = 3;
@@ -221,7 +222,7 @@
             // 
             this.imageLoadProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageLoadProgressBar.Location = new System.Drawing.Point(27, 0);
-            this.imageLoadProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imageLoadProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.imageLoadProgressBar.Name = "imageLoadProgressBar";
             this.imageLoadProgressBar.Size = new System.Drawing.Size(458, 29);
             this.imageLoadProgressBar.TabIndex = 2;
@@ -234,7 +235,7 @@
             this.oneImageForwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.oneImageForwardsButton.ForeColor = System.Drawing.Color.White;
             this.oneImageForwardsButton.Location = new System.Drawing.Point(485, 0);
-            this.oneImageForwardsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oneImageForwardsButton.Margin = new System.Windows.Forms.Padding(2);
             this.oneImageForwardsButton.Name = "oneImageForwardsButton";
             this.oneImageForwardsButton.Size = new System.Drawing.Size(27, 29);
             this.oneImageForwardsButton.TabIndex = 1;
@@ -250,7 +251,7 @@
             this.oneImageBackwardsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.oneImageBackwardsButton.ForeColor = System.Drawing.Color.White;
             this.oneImageBackwardsButton.Location = new System.Drawing.Point(0, 0);
-            this.oneImageBackwardsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oneImageBackwardsButton.Margin = new System.Windows.Forms.Padding(2);
             this.oneImageBackwardsButton.Name = "oneImageBackwardsButton";
             this.oneImageBackwardsButton.Size = new System.Drawing.Size(27, 29);
             this.oneImageBackwardsButton.TabIndex = 0;

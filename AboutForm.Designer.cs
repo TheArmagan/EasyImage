@@ -60,8 +60,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(770, 194);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Created By Kıraç Armağan Önal\r\nWebsite: kao.web.tr\r\n\r\nLogo from \"Microsoft Window" +
-    "s 10 May 2019 Update\" emojis.";
+            this.label2.Text = "Created By Kıraç Armağan Önal (armagan.rest)\r\nVersion: v0.3.0\r\n\r\nLogo from \"Micro" +
+    "soft Windows 10 May 2019 Update\" emojis.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AboutForm

@@ -121,17 +121,23 @@ namespace EasyImage
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
+            openFileDialog();
+        }
+
+        private void openFileDialog()
+        {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
-                openFileDialog.Filter = "Image Files|*.png;*.jpg;*.jpeg;*.gif;*.bmp;*.ico;*.jfif";
+                string filterMap = String.Join(";", supportedExtensions.Select(i => String.Format("*{0}", i)).ToArray());
+                openFileDialog.Filter = "Image Files|" + filterMap;
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
                     GC.Collect();
                     loadFile(openFileDialog.FileName);
                 }
             }
-
         }
 
         private void MainPictureBox_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -144,8 +150,11 @@ namespace EasyImage
 
             imageInfoInput.Text = $"{currentIndex+1}/{fileInfos.Length} | {mainPictureBox.Image.Width}x{mainPictureBox.Image.Height} | {Math.Round((double)(currentFileInfo.Length / 1024))}kb | {currentFileInfo.Name}";
 
+
             oneImageBackwardsButton.Enabled = true;
             oneImageForwardsButton.Enabled = true;
+
+            GC.Collect();
         }
 
 
@@ -194,26 +203,28 @@ namespace EasyImage
 
         private void oneImageBackwardsButton_Click(object sender, EventArgs e)
         {
-            oneImageBackwardsButton.Enabled = false;
-            oneImageBackwards();
+            if (currentFileInfo != null)
+            {
+                oneImageBackwards();
+            }
         }
 
         private void oneImageForwardButton_Click(object sender, EventArgs e)
         {
-            oneImageForwardsButton.Enabled = false;
-            oneImageForward();
+            if (currentFileInfo != null)
+            {
+                oneImageForward();
+            }
         }
+
+
 
         private void oneImageBackwards()
         {
             FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v) => { return Array.Exists(supportedExtensions, (extension) => { return extension == v.Extension; }); }); ;
             int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
 
-            if (currentIndex - 1 < 0)
-            {
-                MessageBox.Show("No more image");
-            }
-            else
+            if (!(currentIndex - 1 < 0))
             {
                 loadFile(fileInfos[currentIndex - 1].FullName);
             }
@@ -225,11 +236,7 @@ namespace EasyImage
             FileInfo[] fileInfos = Array.FindAll(currentFileInfo.Directory.GetFiles().ToArray<FileInfo>(), (v)=> { return Array.Exists(supportedExtensions, (extension)=> { return extension == v.Extension; }); });
             int currentIndex = Array.FindIndex(fileInfos, (v) => { return v.Name == currentFileInfo.Name; });
 
-            if (currentIndex + 1 > fileInfos.Length - 1)
-            {
-                MessageBox.Show("No More Image");
-            }
-            else
+            if (!(currentIndex + 1 > fileInfos.Length - 1))
             {
                 loadFile(fileInfos[currentIndex + 1].FullName);
             }
@@ -249,6 +256,31 @@ namespace EasyImage
                 WindowState = FormWindowState.Maximized;
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
 
+            if (currentFileInfo != null)
+            {
+                switch (keyData)
+                {
+                    case Keys.Left:
+                        oneImageBackwards();
+                        break;
+                    case Keys.Right:
+                        oneImageForward();
+                        break;
+                }
+            }
+
+            switch (keyData)
+            {
+                case Keys.O:
+                    openFileDialog();
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+
+        }
     }
 }

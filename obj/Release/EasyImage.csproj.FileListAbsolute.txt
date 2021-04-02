@@ -11,3 +11,15 @@ C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csprojAssemblyReferenc
 C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csproj.CoreCompileInputs.cache
 C:\Users\BDT\source\repos\EasyImage\bin\Release\System.Drawing.Common.dll
 C:\Users\BDT\source\repos\EasyImage\obj\Release\EasyImage.csproj.CopyComplete
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\bin\Release\EasyImage.exe.config
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\bin\Release\EasyImage.exe
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\bin\Release\EasyImage.pdb
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\bin\Release\System.Drawing.Common.dll
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.AboutForm.resources
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.MainForm.resources
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.Properties.Resources.resources
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.csproj.GenerateResource.cache
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.csproj.CoreCompileInputs.cache
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.csproj.CopyComplete
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.exe
+C:\Users\BDT\Source\Repos\TheArmagan\EasyImage\obj\Release\EasyImage.pdb
